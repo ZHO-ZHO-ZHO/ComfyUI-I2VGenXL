@@ -89,8 +89,15 @@ class I2VGenXL_Generation_Zho:
         video_tensor = output.frames 
         video_nhwc = video_tensor[0].permute(0, 2, 3, 1)
 
-        return (video_nhwc,) 
+        # 检测最后一帧是否为全灰色
+        std = torch.std(video_nhwc[-1], dim=-1)
+        is_gray = torch.all(std == 0)
 
+        # 如果最后一帧是全灰色，则从视频张量中删除该帧
+        if is_gray:
+            video_nhwc = video_nhwc[:-1]
+
+        return (video_nhwc,) 
 
 NODE_CLASS_MAPPINGS = {
     "I2VGenXL_ModelLoader_Zho": I2VGenXL_ModelLoader_Zho,
