@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-i2vgenxl"
-description = ""
+description = "Unofficial implementation of I2VGenXL for ComfyUI"
 version = "1.0.0"
 license = "LICENSE"
 dependencies = ["diffusers"]
