@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-i2vgenxl"
+description = "Unofficial implementation of I2VGenXL for ComfyUI"
+version = "1.0.0"
+license = "LICENSE"
+dependencies = ["diffusers"]
+
+[project.urls]
+Repository = "https://github.com/ZHO-ZHO-ZHO/ComfyUI-I2VGenXL"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-I2VGenXL"
+Icon = ""
